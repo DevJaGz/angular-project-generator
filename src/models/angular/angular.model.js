@@ -2,6 +2,7 @@ import path from "path";
 import { buildPath, builFolderName } from "../../constants/project.constant.js";
 import { executionService } from "../../services/execution.service.js";
 import { logService } from "../../services/log.service.js";
+import { resourceService } from "../../services/resource.service.js";
 
 
 /**
@@ -52,6 +53,10 @@ class AngularModel{
      */
     #deleteAppSpec(showLogs){
         logService.print(`Deleting "app.component.spec.ts" file...`, showLogs)
+        const filePath = path.join(this.#projectPath, 'src', 'app', 'app.component.spec.ts')
+        if (resourceService.deleteFile(filePath)){
+            logService.print(`"app.component.spec.ts" DELETED`, showLogs)
+        } 
     }
 
 }
