@@ -1,3 +1,3 @@
 import { angularModel } from "./models/angular/angular.model.js";
 
-angularModel.createProject();
+const projectPath = angularModel.createProject({ name: 'angular'});
