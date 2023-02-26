@@ -1,0 +1,25 @@
+{
+  "name": "angular-project-generator",
+  "version": "0.1.0",
+  "description": "Generate an angular project",
+  "main": "src/main.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/main.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DevJaGz/angular-project-generator.git"
+  },
+  "keywords": [
+    "angular",
+    "cli",
+    "generator"
+  ],
+  "author": "Julian Andres Gomez Gomez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DevJaGz/angular-project-generator/issues"
+  },
+  "homepage": "https://github.com/DevJaGz/angular-project-generator#readme"
+}
