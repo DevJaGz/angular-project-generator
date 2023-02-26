@@ -39,10 +39,8 @@ class AppModel {
             logService.print(`"${fileName}" DELETED`, showLogs)
             const appComponentTsContent = this.#readAppComponentTs(projectPath, showLogs)
             if (appComponentTsContent){
-                console.log('>>>', appComponentTsContent);
                 const regex = new RegExp(`styleUrls: \\['\\.\\/(${fileName})'\\]`);
                 const appComponentTsContentUpdated = appComponentTsContent.replace(regex, '')
-                console.log('CONTENT appComponentTsContentUpdated', appComponentTsContentUpdated);
                 this.#writeAppComponentTs(projectPath, appComponentTsContentUpdated)
             }
         } 
@@ -56,10 +54,8 @@ class AppModel {
      * @returns The content in the app.component.ts
      */
     #readAppComponentTs(projectPath, showLogs){
-        console.log('reading TS', projectPath);
         const fileName = this.#tsName;
         const componentPath = path.join(projectPath, 'src', 'app', fileName)
-        console.log('reading TS', componentPath);
         return resourceService.readFile(componentPath);
     }
 
