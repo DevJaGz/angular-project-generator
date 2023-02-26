@@ -7,12 +7,14 @@ class LogService {
      * Print a log in console
      * @param {String} value - Value to print using console.log
      */
-    print(value, addCustom = true){
-        if (addCustom){
-            this.#printCustom(value);
-            return
+    print(value, show = true, isCustom = true){
+        if (show){
+            if (isCustom){
+                this.#printCustom(value);
+                return
+            }
+            console.log(value);
         }
-        console.log(value);
     }
 
 
