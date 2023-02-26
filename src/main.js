@@ -7,4 +7,4 @@ import { logService } from "./services/log.service.js";
 const projectPath = angularModel.createProject({ name: 'angular'});
 angularModel.initialDelete();
 
-logService.print(`Angular Project Generator Done!`)
+logService.print(`*** Angular Project Generator Done.`)
