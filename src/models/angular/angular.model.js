@@ -3,6 +3,7 @@ import { buildPath, builFolderName } from "../../constants/project.constant.js";
 import { executionService } from "../../services/execution.service.js";
 import { logService } from "../../services/log.service.js";
 
+
 /**
  * Handle the Angular base project
  */
