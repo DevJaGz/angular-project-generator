@@ -2,7 +2,7 @@ import path from "path";
 import { buildPath, builFolderName } from "../../constants/project.constant.js";
 import { executionService } from "../../services/execution.service.js";
 import { logService } from "../../services/log.service.js";
-import { resourceService } from "../../services/resource.service.js";
+import { appModel } from "../app/app.model.js";
 
 
 /**
@@ -43,36 +43,10 @@ class AngularModel{
         const projectPath = this.#projectPath 
         if (projectPath){
             logService.print(`Deleting intial resources...`, showLogs)
-            this.#deleteAppComponentSpec(projectPath, showLogs)
-            // this.#deleteAppComponentStyle(projectPath, showLogs)
+            appModel.deleteAppComponentSpec(projectPath, showLogs)
+            appModel.deleteAppComponentStyle(projectPath, showLogs)
         }
     }
-
-    /**
-     * Delete app.component.spec.ts file
-     * @param {Boolean} - showLogs - If it is true, show the logs in the method
-     */
-    #deleteAppComponentSpec(projectPath, showLogs){
-        const fileName = 'app.component.spec.ts';
-        logService.print(`Deleting "${fileName}" file...`, showLogs)
-        const filePath = path.join(projectPath, 'src', 'app', fileName)
-        if (resourceService.deleteFile(filePath)){
-            logService.print(`"${fileName}" DELETED`, showLogs)
-        } 
-    }
-
-   /**
-     * Delete app.component.scss file
-     * @param {Boolean} - showLogs - If it is true, show the logs in the method
-     */
-        #deleteAppComponentStyle(projectPath, showLogs){
-            const fileName = 'app.component.scss';
-            logService.print(`Deleting "${fileName}" file...`, showLogs)
-            const filePath = path.join(projectPath, 'src', 'app', fileName)
-            if (resourceService.deleteFile(filePath)){
-                logService.print(`"${fileName}" DELETED`, showLogs)
-            } 
-        }
     
 
 }
